@@ -16,7 +16,47 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<workingDirectory>src/main/angular</workingDirectory>
+					<nodeVersion>v8.11.3</nodeVersion>
+					<npmVersion>6.2.0</npmVersion>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>npm run build</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run build</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+
+		<resources>
+			<resource>
+				<directory>target/frontend</directory>
+				<targetPath>static</targetPath>
+			</resource>
+		</resources>
 	</build>
 
 
