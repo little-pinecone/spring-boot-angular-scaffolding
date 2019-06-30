@@ -21,7 +21,7 @@ $ mvn clean install
 ## Built With
 
 * [Maven](https://maven.apache.org/)
-* [Spring Boot 2.0.4](https://start.spring.io/)
+* [Spring Boot 2.1.5](https://start.spring.io/)
 * [Angular 6](https://angular.io/)
 * [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin)
 
