@@ -23,10 +23,7 @@ $ mvn clean install
 * [Maven](https://maven.apache.org/)
 * [Spring Boot 2.1.5](https://start.spring.io/)
 * [Angular 8](https://angular.io/)
-* [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin)
-* [npm 6.9.0](https://github.com/npm/cli)
-* [Node.js v10.16.0](https://nodejs.org/dist/latest-v10.x/docs/api/)
-
+* [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) ([npm 6.10.2](https://github.com/npm/cli), [Node.js v10.16.0](https://nodejs.org/dist/latest-v10.x/docs/api/))
 
 ## License
 
