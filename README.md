@@ -2,11 +2,43 @@
 
 ![keep growing logo](readme-images/logo_250x60.png)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=alert_status)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=bugs)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=coverage)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=code_smells)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=little-pinecone_spring-boot-angular-scaffolding&metric=sqale_index)](https://sonarcloud.io/dashboard?id=little-pinecone_spring-boot-angular-scaffolding)
+
+![GitHub](https://img.shields.io/github/license/little-pinecone/spring-boot-angular-scaffolding)
+
 To learn how to set up a project like this one, check out the [Integrate Angular with a Spring Boot project](http://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/)
 post.
 
 This project is a multi-module application, using the following frameworks: Spring Boot for the backend and Angular for
 the frontend. The project can be built into a single jar file using Maven.
+
+- [Getting Started](#getting-started)
+- [Profiles summary](#profiles-summary)
+  * [Spring profiles](#spring-profiles)
+  * [Maven profiles](#maven-profiles)
+- [API documentation](#api-documentation)
+  * [Swagger](#swagger)
+  * [OpenAPI](#openapi)
+- [Client code generation](#client-code-generation)
+- [Working with frontend on a local environment](#working-with-frontend-on-a-local-environment)
+- [Running test suits](#running-test-suits)
+  * [Backend](#backend)
+  * [Frontend](#frontend)
+- [SonarQube analysis on local environment](#sonarqube-analysis-on-local-environment)
+  * [Prerequisites](#prerequisites)
+  * [Full analysis](#full-analysis)
+  * [Backend analysis](#backend-analysis)
+  * [Frontend analysis](#frontend-analysis)
+  * [Verifying results](#verifying-results)
+- [Built With](#built-with)
 
 ## Getting Started
 
@@ -29,7 +61,7 @@ summary of the available profiles.
 * `dev` - for allowing request from `http://localhost:4200/`. This profile set as an active profile by default. You can
   change it in the `backend/src/main/resources/application.properties` file.
 
-## Maven profiles
+### Maven profiles
 
 * `sonar-cloud` - for code analysis on push to `master`
 * `code-coverage` - for including code coverage reports from the `backend` module during a sonar analysis
@@ -150,7 +182,7 @@ Or use the shell script which you can find in the closing paragraphs of
 the [How to add an Angular module built with Maven to a SonarQube analysis](https://keepgrowing.in/angular/how-to-add-an-angular-module-built-with-maven-to-a-sonarqube-analysis/)
 post.
 
-## Verifying results
+### Verifying results
 
 Visit the [Projects](http://localhost:9000/projects) page and choose the right project. Depending on which modules were
 analysed you can see one, two, or three projects.
@@ -162,3 +194,5 @@ analysed you can see one, two, or three projects.
 * [Angular v12+](https://angular.io/)
 * [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin)
 * [springdoc-openapi](https://springdoc.org/)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
