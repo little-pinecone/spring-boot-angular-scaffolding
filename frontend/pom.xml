@@ -1,63 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>in.keepgrowing</groupId>
+        <artifactId>spring-boot-angular-scaffolding</artifactId>
+        <version>1.0.2-SNAPSHOT</version>
+    </parent>
+    <artifactId>frontend</artifactId>
+    <name>frontend</name>
+    <description>The frontend module built with Angular</description>
 
-	<artifactId>frontend</artifactId>
+    <properties>
+        <frontend.maven.plugin.version>1.9.1</frontend.maven.plugin.version>
+        <node.version>v14.17.1</node.version>
+        <npm.version>7.17.0</npm.version>
 
-	<name>frontend</name>
-	<description>The frontend module built with Angular</description>
+        <sonar.projectKey>little-pinecone_spring-boot-angular-scaffolding-frontend</sonar.projectKey>
+        <sonar.projectName>Spring Boot Angular Scaffolding (frontend)</sonar.projectName>
+        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+        <sonar.sources>src/main/angular/src</sonar.sources>
+        <sonar.tests>src/main/angular/src</sonar.tests>
+        <sonar.javascript.lcov.reportPaths>src/main/angular/coverage/lcov.info</sonar.javascript.lcov.reportPaths>
+        <sonar.test.inclusions>src/main/angular/src/**/*.spec.ts</sonar.test.inclusions>
+        <sonar.coverage.exclusions>
+            src/main/angular/src/environments/environment*.ts,
+            src/main/angular/src/**/*.module.ts,
+            src/main/angular/src/**/*.stub.ts,
+        </sonar.coverage.exclusions>
+        <sonar.exclusions>
+            /node_modules/,
+            src/main/angular/src/backend/**,
+            src/main/angular/src/polyfills.ts,
+            src/main/angular/src/test.ts,
+            src/main/angular/src/main.ts,
+        </sonar.exclusions>
+    </properties>
 
-	<parent>
-		<artifactId>spring-boot-angular-scaffolding</artifactId>
-		<groupId>in.keepgrowing</groupId>
-		<version>1.0.2-SNAPSHOT</version>
-	</parent>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${frontend.maven.plugin.version}</version>
+                <configuration>
+                    <workingDirectory>src/main/angular</workingDirectory>
+                    <nodeVersion>${node.version}</nodeVersion>
+                    <npmVersion>${npm.version}</npmVersion>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>npm run build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run build</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.github.eirslett</groupId>
-				<artifactId>frontend-maven-plugin</artifactId>
-				<version>1.9.1</version>
-				<configuration>
-					<workingDirectory>src/main/angular</workingDirectory>
-					<nodeVersion>v12.14.1</nodeVersion>
-					<npmVersion>6.13.7</npmVersion>
-				</configuration>
-				<executions>
-					<execution>
-						<id>install node and npm</id>
-						<goals>
-							<goal>install-node-and-npm</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>npm install</id>
-						<goals>
-							<goal>npm</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>npm run build</id>
-						<goals>
-							<goal>npm</goal>
-						</goals>
-						<configuration>
-							<arguments>run build</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
+        <resources>
+            <resource>
+                <directory>target/frontend</directory>
+                <targetPath>static</targetPath>
+            </resource>
+        </resources>
+    </build>
 
-		<resources>
-			<resource>
-				<directory>target/frontend</directory>
-				<targetPath>static</targetPath>
-			</resource>
-		</resources>
-	</build>
+    <profiles>
+        <profile>
+            <id>frontend-pre-sonar</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>${frontend.maven.plugin.version}</version>
+                        <configuration>
+                            <workingDirectory>src/main/angular</workingDirectory>
+                            <nodeVersion>${node.version}</nodeVersion>
+                            <npmVersion>${npm.version}</npmVersion>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>install node and npm</id>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>npm run sonar</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>run pre-sonar</arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
+        <profile>
+            <id>frontend-sonar</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>${frontend.maven.plugin.version}</version>
+                        <configuration>
+                            <workingDirectory>src/main/angular</workingDirectory>
+                            <nodeVersion>${node.version}</nodeVersion>
+                            <npmVersion>${npm.version}</npmVersion>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>npm run sonar</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>run sonar</arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
