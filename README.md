@@ -53,7 +53,8 @@ url: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs).
 
 ## Client code generation
 
-To run client code generation using the `openapi-generator-maven-plugin` execute the following command:
+To run [client code generation](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/) 
+using the `openapi-generator-maven-plugin` execute the following command:
 
 ```shell
 mvn clean verify -Pangular -DskipTests
