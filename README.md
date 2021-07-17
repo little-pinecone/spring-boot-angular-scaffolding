@@ -47,9 +47,19 @@ this repository.
 
 Then, build it locally with:
 
-```bash
+```shell
 mvn clean install
 ```
+
+You can run the project from command line with:
+
+```shell
+mvn spring-boot:run
+```
+
+As a result, you should be able to visit the home page on [http://localhost:8080/](http://localhost:8080/):
+
+![home page screenshot](readme-images/home-page-screenshot.png)
 
 ## Profiles summary
 
