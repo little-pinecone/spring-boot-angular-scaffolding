@@ -1,2 +1,69 @@
-<p>home works!</p>
-<p>{{homeContent?.body}}</p>
+<div class="card ms-3 me-3 mt-3 text-center">
+  <h5 class="card-header">Welcome!</h5>
+  <div class="card-body">
+    <h5 class="card-title">This is an example of a Spring Boot Angular scaffolding app</h5>
+    <p class="card-text mt-4"
+       [ngClass]="{'text-success': homeContent?.body!=undefined, 'text-danger': homeContent?.body==undefined}">
+      <i
+        [ngClass]="{'bi bi-check-circle': homeContent?.body!=undefined, 'bi bi-x-circle': homeContent?.body==undefined}"
+        aria-hidden="true">
+      </i>
+      Backend communication test:
+      <ng-container *ngIf="homeContent?.body!=undefined">"{{homeContent?.body}}"</ng-container>
+      <ng-container *ngIf="homeContent?.body==undefined">failed</ng-container>
+    </p>
+    <div style="border: 1px solid #eee;" class="ms-5 me-5 mt-4">
+      <p class="card-text mt-4">
+        Replace this 'home' component with whatever suits you <i class="bi bi-emoji-smile" aria-hidden="true"></i>
+      </p>
+      <p class="card-text">
+        The following features / tools are already available:
+      </p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank" rel=noopener>
+            Bootstrap v 5+
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://icons.getbootstrap.com/" target="_blank" rel=noopener>
+            Bootstrap Icons
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://ng-bootstrap.github.io/#/home" target="_blank" rel=noopener>
+            ng-bootstrap
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://swagger.io/tools/swagger-ui/" target="_blank" rel=noopener>
+            Swagger UI
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://angular.io/guide/routing-overview" target="_blank" rel=noopener>
+            Angular routing
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/" target="_blank"
+             rel=noopener>
+            Client code generation
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a
+            href="https://keepgrowing.in/angular/how-to-add-an-angular-module-built-with-maven-to-a-sonarqube-analysis/"
+            target="_blank" rel=noopener>
+            Local code analysis
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer mt-4">
+    <a href="https://keepgrowing.in/" target="_blank" rel=noopener>
+      keepgrowing.in
+    </a>
+  </div>
+</div>

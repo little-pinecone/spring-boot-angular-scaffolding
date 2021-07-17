@@ -34,7 +34,7 @@ class HomePageControllerTest {
 
     @Test
     void shouldGetTestDataForHomepage() throws Exception {
-        var expected = new HomePageDto("Home page body provided by the backend module");
+        var expected = new HomePageDto("working");
 
         mvc.perform(get("/api/home")
                 .contentType(MediaType.APPLICATION_JSON))
