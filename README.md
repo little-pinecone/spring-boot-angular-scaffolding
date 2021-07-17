@@ -194,5 +194,7 @@ analysed you can see one, two, or three projects.
 * [Angular v12+](https://angular.io/)
 * [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin)
 * [springdoc-openapi](https://springdoc.org/)
+* [Bootstrap v5+](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* [ng-bootstrap](https://ng-bootstrap.github.io/#/home)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
