@@ -18,7 +18,7 @@ public class HomePageController {
     @GetMapping
     @Operation(summary = "Returns unsecured test data from backend")
     public ResponseEntity<HomePageDto> getHomePageData() {
-        var body = new HomePageDto("Home page body provided by the backend module");
+        var body = new HomePageDto("working");
 
         return ResponseEntity.ok(body);
     }

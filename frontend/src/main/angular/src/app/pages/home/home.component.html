@@ -8,7 +8,9 @@
         [ngClass]="{'bi bi-check-circle': homeContent?.body!=undefined, 'bi bi-x-circle': homeContent?.body==undefined}"
         aria-hidden="true">
       </i>
-      Backend communication test: "{{homeContent?.body}}"
+      Backend communication test:
+      <ng-container *ngIf="homeContent?.body!=undefined">"{{homeContent?.body}}"</ng-container>
+      <ng-container *ngIf="homeContent?.body==undefined">failed</ng-container>
     </p>
     <div style="border: 1px solid #eee;" class="ms-5 me-5 mt-4">
       <p class="card-text mt-4">

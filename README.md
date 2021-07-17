@@ -58,8 +58,8 @@ summary of the available profiles.
 
 ### Spring profiles
 
-* `dev` - for allowing request from `http://localhost:4200/`. This profile set as an active profile by default. You can
-  change it in the `backend/src/main/resources/application.properties` file.
+* `dev` - for allowing request from `http://localhost:4200/`. This profile is set as an active profile by default. 
+  You can change it in the `backend/src/main/resources/application.properties` file.
 
 ### Maven profiles
 
