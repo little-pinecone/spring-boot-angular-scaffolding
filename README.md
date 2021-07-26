@@ -22,6 +22,7 @@ the frontend. The project can be built into a single jar file using Maven.
 
 - [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
+  * [Running the project](#running-the-project)
 - [Profiles summary](#profiles-summary)
   * [Spring profiles](#spring-profiles)
   * [Maven profiles](#maven-profiles)
@@ -34,7 +35,7 @@ the frontend. The project can be built into a single jar file using Maven.
   * [Backend](#backend)
   * [Frontend](#frontend)
 - [SonarQube analysis on a local environment](#sonarqube-analysis-on-a-local-environment)
-  * [Prerequisites](#prerequisites)
+  * [SonarQube Prerequisites](#sonarqube-prerequisites)
   * [Full analysis](#full-analysis)
   * [Backend analysis](#backend-analysis)
   * [Frontend analysis](#frontend-analysis)
@@ -49,6 +50,8 @@ the frontend. The project can be built into a single jar file using Maven.
 * Maven (or you can use mvnw provided in the project)
 * Docker
 * Docker Compose
+
+### Running the project
 
 First, [clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)
 this repository.
@@ -159,7 +162,7 @@ ng test
 
 ## SonarQube analysis on a local environment
 
-### Prerequisites
+### SonarQube Prerequisites
 
 * Read the [Boost project quality with SonarQube – local code analysis](https://keepgrowing.in/tools/boost-project-quality-with-sonarqube-local-code-analysis/)
   post to set up dependencies properly.
