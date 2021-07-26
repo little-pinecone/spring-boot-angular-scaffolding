@@ -21,6 +21,7 @@ This project is a multi-module application, using the following frameworks: Spri
 the frontend. The project can be built into a single jar file using Maven.
 
 - [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
 - [Profiles summary](#profiles-summary)
   * [Spring profiles](#spring-profiles)
   * [Maven profiles](#maven-profiles)
@@ -32,7 +33,7 @@ the frontend. The project can be built into a single jar file using Maven.
 - [Running test suits](#running-test-suits)
   * [Backend](#backend)
   * [Frontend](#frontend)
-- [SonarQube analysis on local environment](#sonarqube-analysis-on-local-environment)
+- [SonarQube analysis on a local environment](#sonarqube-analysis-on-a-local-environment)
   * [Prerequisites](#prerequisites)
   * [Full analysis](#full-analysis)
   * [Backend analysis](#backend-analysis)
@@ -41,6 +42,13 @@ the frontend. The project can be built into a single jar file using Maven.
 - [Built With](#built-with)
 
 ## Getting Started
+
+### Prerequisites
+
+* JDK 13+
+* Maven (or you can use mvnw provided in the project)
+* Docker
+* Docker Compose
 
 First, [clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)
 this repository.
@@ -149,7 +157,7 @@ cd frontend/src/main/angular
 ng test
 ```
 
-## SonarQube analysis on local environment
+## SonarQube analysis on a local environment
 
 ### Prerequisites
 
