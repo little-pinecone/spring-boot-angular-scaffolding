@@ -47,10 +47,10 @@ the frontend. The project can be built into a single jar file using Maven.
 
 ### Prerequisites
 
-* JDK 13+
-* Maven (or you can use mvnw provided in the project)
-* Docker
-* Docker Compose
+* [JDK 13+](https://adoptopenjdk.net/archive.html)
+* [Maven](https://maven.apache.org/) (or you can use `mvnw` provided in the project)
+* [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/)
 
 ### Running the project
 
