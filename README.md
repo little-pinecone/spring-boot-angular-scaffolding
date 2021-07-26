@@ -40,6 +40,7 @@ the frontend. The project can be built into a single jar file using Maven.
   * [Backend analysis](#backend-analysis)
   * [Frontend analysis](#frontend-analysis)
   * [Verifying results](#verifying-results)
+- [Forking this repository](#forking-this-repository)
 - [Built With](#built-with)
 
 ## Getting Started
@@ -207,6 +208,22 @@ post.
 
 Visit the [Projects](http://localhost:9000/projects) page and choose the right project. Depending on which modules were
 analysed you can see one, two, or three projects.
+
+## Forking this repository
+
+### Update project metadata
+
+* Make sure to provide your own values for `<name>`, `<description>`, `<artifactId>` and `<groupId>` in the `pom.xml`, 
+`backend/pom.xml` and `frontend/pom.xml` files.
+  
+### GitHub Actions and SonarCloud analysis
+
+* Remove the `.github/workflows/build.yml` file if you don't want to configure GitHub Actions for your repository.
+* If you don't want to configure SonarCloud for your repository: remove the `sonar-cloud` profile from `pom.xml`, 
+  `<sonar.projectKey>` and `<sonar.projectName>` from `backend/pom.xml` and all `<sonar…>` properties from 
+  `frontend/pom.xml`
+* If you do want to configure GitHub Actions and SonarCloud analysis, add your own SONAR_TOKEN to your repository 
+and customize all mentioned above`<sonar…>` properties in the `pom.xml` files.
 
 ## Built With
 
