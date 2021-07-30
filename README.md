@@ -102,8 +102,10 @@ The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:80
 
 ### OpenAPI
 
-The OpenAPI description in json format is available at the following
+* The OpenAPI description in the `json` format is available at the following
 url: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs).
+* The API specification is also available in the `yaml` format under the 
+[http://localhost:8080/v3/api-docs.yaml](http://localhost:8080/v3/api-docs.yaml) link.
 
 ## Client code generation
 
