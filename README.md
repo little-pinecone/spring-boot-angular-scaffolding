@@ -112,6 +112,7 @@ To run [client code generation](https://codesoapbox.dev/generate-client-code-fro
 using the `openapi-generator-maven-plugin` execute the following command:
 
 ```shell
+cd backend
 mvn clean verify -Pangular -DskipTests
 ```
 
@@ -179,7 +180,8 @@ You can run analysis for the **whole project** (both backend and frontend):
 mvn clean verify sonar:sonar -Pfrontend-pre-sonar -Pcode-coverage -Dsonar.login=your_username -Dsonar.password=your_password
 ```
 
-Or use the shell script: `./run-sonar.sh -a`
+Or use the shell script which you can find in the closing paragraphs of the 
+[How to add an Angular module built with Maven to a SonarQube analysis post](https://keepgrowing.in/angular/how-to-add-an-angular-module-built-with-maven-to-a-sonarqube-analysis/).
 
 ### Backend analysis
 
