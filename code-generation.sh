@@ -1,3 +1,3 @@
 #!/bin/bash
-
-mvn clean verify -Pangular -DskipTests
+cd backend
+mvn clean verify -Pangular -Dspring.profiles.active=dev -DskipTests
