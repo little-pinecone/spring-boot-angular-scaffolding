@@ -80,8 +80,7 @@ summary of the available profiles.
 
 ### Spring profiles
 
-* `dev` - for allowing request from `http://localhost:4200/`. This profile is set as an active profile by default. 
-  You can change it in the `backend/src/main/resources/application.properties` file.
+* `dev` - for allowing requests from `http://localhost:4200/` when you want to run the Angular module locally.
 
 ### Maven profiles
 
@@ -123,20 +122,18 @@ The generated code is available in the `frontend/src/main/angular/src/backend` d
 ## Working with frontend on a local environment
 
 If you want to see how changes you make in the frontend code affects the application you don't need to build it together
-with the `backend` module every time. Use the following commands:
+with the `backend` module every time (`mvn clean install`). Use the following commands:
+
+```shell
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
 
 ```shell
 cd frontend/src/main/angular
 ng serve
 ```
 
-and visit [http://localhost:4200/](http://localhost:4200/). The application reloads automatically which speeds up your work.
-
-In order to incorporate changes with the project, rebuild the whole application from the main project directory with:
-
-```shell
-mvn clean install
-```
+and visit [http://localhost:4200/](http://localhost:4200/). The frontend application reloads automatically on code change.
 
 ## Running test suits
 
