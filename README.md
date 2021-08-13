@@ -66,7 +66,7 @@ mvn clean install
 You can run the project from command line with:
 
 ```shell
-mvn spring-boot:run
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 As a result, you should be able to visit the home page on [http://localhost:8080/](http://localhost:8080/):
@@ -80,7 +80,9 @@ summary of the available profiles.
 
 ### Spring profiles
 
-* `dev` - for allowing requests from `http://localhost:4200/` when you want to run the Angular module locally.
+* `dev` - for local development. Allows things like handling requests from `http://localhost:4200/`.
+* `angular` - special profile used for [client code generation](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/). 
+Applied automatically when the `angular` Maven profile is enabled.
 
 ### Maven profiles
 
@@ -116,13 +118,13 @@ cd backend
 mvn clean verify -Pangular -DskipTests
 ```
 
-The application will be started so that the API specification can be obtained from the open api endpoint.
+The application will be started so that the API specification can be obtained from the Open API endpoint.
 
 The generated code is available in the `frontend/src/main/angular/src/backend` directory. Don't edit those files manually.
 
 ## Working with frontend on a local environment
 
-If you want to see how changes you make in the frontend code affects the application you don't need to build it together
+If you want to see how changes you make in the frontend code affect the application you don't need to build it together
 with the `backend` module every time (`mvn clean install`). Use the following commands:
 
 ```shell
@@ -180,12 +182,9 @@ You can run analysis for the **whole project** (both backend and frontend):
 mvn clean verify sonar:sonar -Pfrontend-pre-sonar -Pcode-coverage -Dsonar.login=your_username -Dsonar.password=your_password
 ```
 
-Or use the shell script which you can find in the closing paragraphs of the 
-[How to add an Angular module built with Maven to a SonarQube analysis post](https://keepgrowing.in/angular/how-to-add-an-angular-module-built-with-maven-to-a-sonarqube-analysis/).
-
 ### Backend analysis
 
-You can run analysis for the **backend** module:
+You can run a separate analysis for the **backend** module:
 
 ```shell
 cd backend
@@ -194,7 +193,7 @@ mvn clean verify sonar:sonar -Pcode-coverage -Dsonar.login=your_username -Dsonar
 
 ### Frontend analysis
 
-You can run analysis for the **frontend** module:
+You can run a separate analysis for the **frontend** module:
 
 ```shell
 cd frontend
@@ -208,7 +207,7 @@ post.
 ### Verifying results
 
 Visit the [Projects](http://localhost:9000/projects) page and choose the right project. Depending on which modules were
-analysed you can see one, two, or three projects.
+analysed you should see one, two, or three projects.
 
 ## Forking this repository
 
