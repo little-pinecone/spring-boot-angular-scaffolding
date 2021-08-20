@@ -47,10 +47,18 @@ the frontend. The project can be built into a single jar file using Maven.
 
 ### Prerequisites
 
+Backend:
+
 * [JDK 13+](https://adoptopenjdk.net/archive.html)
 * [Maven](https://maven.apache.org/) (or you can use `mvnw` provided in the project)
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/)
+
+Frontend:
+
+* Node.js version that you specify in the `frontend-maven-plugin` configuration - 
+[Angular requires](https://angular.io/guide/setup-local#prerequisites) an [active or maintenance LTS](https://nodejs.org/en/about/releases/) 
+version of Node.js. For the reference, you can check out this [unofficial compatibility matrix](https://gist.github.com/LayZeeDK/c822cc812f75bb07b7c55d07ba2719b3).
 
 ### Running the project
 
