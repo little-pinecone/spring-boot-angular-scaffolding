@@ -118,6 +118,14 @@ url: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs).
 
 ## Client code generation
 
+### Compatibility
+
+Right now `openapi-generator` supports Angular 11.0.0. Although the generated code works with Angular 12+ used in this 
+project, it's strongly recommended to update the generator plugin as soon as it starts supporting Angular 12.0.0 
+(see [Issue #9511](https://github.com/OpenAPITools/openapi-generator/issues/9511)).
+
+### Generating code
+
 To run [client code generation](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/) 
 using the `openapi-generator-maven-plugin` execute the following command:
 
@@ -126,8 +134,7 @@ cd backend
 mvn clean verify -Pangular -DskipTests
 ```
 
-The application will be started so that the API specification can be obtained from the Open API endpoint.
-
+The application will be started so that the API specification can be obtained from the Open API endpoint. 
 The generated code is available in the `frontend/src/main/angular/src/backend` directory. Don't edit those files manually.
 
 ## Working with frontend on a local environment
